@@ -21,10 +21,10 @@ let potterKey = 1
 export const makePottery = (shape, weight, height) => {
     let id = 1
     const potter = {
+        id: potterKey,
         shape: shape,
         weight: weight,
-        height: height,
-        id: potterKey
+        height: height
     }
     potterKey++
 
