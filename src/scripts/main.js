@@ -3,6 +3,7 @@ import { makePottery } from "./PotteryWheel.js"
 import { firePottery } from "./kiln.js"
 import { toSellOrNotToSell } from "./PotteryCatalog.js"
 import { usePottery } from "./PotteryCatalog.js"
+import { PotteryList } from "./PotteryList.js"
 
 
 
@@ -27,14 +28,15 @@ let catalogPlate = toSellOrNotToSell(firedPlate)
 let catalogVase = toSellOrNotToSell(firedVase)
 let catalogJar = toSellOrNotToSell(firedJar)
 
+let catalog = usePottery()
 
-console.log(catalogMug)
-console.log(catalogPlatter)
-console.log(catalogPlate)
-console.log(catalogVase)
-console.log(catalogJar)
 
 // Invoke the component function that renders the HTML list
+let catalogEl = document.getElementsByClassName("potteryList")
+let catalogList = PotteryList(catalog)
 
+catalogEl.innerHTML += catalogList
 
+console.log(catalogEl)
 
+//console.log(catalogList)
